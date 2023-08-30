@@ -98,7 +98,7 @@ async function uploadToS3(data, filename) {
 async function downloadexpense(req, res, next) {
 	try {
 		// const expenses = await req.user.getExpenses();
-		const expenses = await expenseUser.findOne({where:{ customerId: req.user.id }});
+		const expenses = await expenseUser.findAll({where:{ customerId: req.user.id }});
 		const stringifiedExpenses = JSON.stringify(expenses);
 		let userId = req.user.id;
 		const filename = `Expenses${userId}/${new Date()}.txt`;
