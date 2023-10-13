@@ -24,7 +24,7 @@ const purchasePremium = async (req, res, next) => {
 				console.log(err);
 				res.json({ message: err, success: false });
 			}
-
+			console.log("Error ki maa ki chuut", order)
 			Order.create({ orderid: order.id, status: "PENDING", paymentid: "NULL", customerId: req.user.id })
 				.then(() => {
 					return res.status(201).json({ order, key_id: rzp.key_id });

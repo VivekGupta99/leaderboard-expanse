@@ -252,11 +252,11 @@
 			try {
 				config = {
 					method: 'POST',
-					url: 'http://51.20.4.199:3001/user/login',
+					url: 'http://localhost:3001/user/login',
 
 					data: { email: emailInput.value, password: passwordInput.value }
 				}
-				
+
 				let res = await axios(config)
 				if (res.status == 200) {
 					console.log(res.data.token);
@@ -275,7 +275,7 @@
 			}
 		}
 	</script>
-	
+
 </body>
 
 </html>

@@ -2,6 +2,7 @@ const {html,addExpense ,getAllExpense,deleteExpense,downloadexpense,allfiles,pag
 const express = require('express');
 const {authentication} = require('../middlewares/auth')
 const router = express.Router();
+
 router.route('/preview').get(html);
 router.route('/').post(authentication,addExpense).get(authentication,getAllExpense);
 router.route('/:id').delete(authentication,deleteExpense);

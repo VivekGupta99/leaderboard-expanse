@@ -18,7 +18,7 @@ async function signup(e) {
 			password: passwordInput.value,
 		};
 		console.log(signUpDetails);
-		let response = await axios.post("http://51.20.4.199:3001/user/signup", signUpDetails);
+		let response = await axios.post("http://localhost:3001/user/signup", signUpDetails);
 		if (response.status === 201) {
 			console.log("obj posted");
 			window.location.href = "../index.html";
